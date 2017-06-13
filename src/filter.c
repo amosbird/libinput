@@ -1202,8 +1202,7 @@ trackpoint_accelerator_set_speed(struct motion_filter *filter,
 
 	assert(speed_adjustment >= -1.0 && speed_adjustment <= 1.0);
 
-	accel_filter->max_accel = max(TRACKPOINT_DEFAULT_MAX_ACCEL,
-				      2.0 + speed_adjustment * 8);
+	accel_filter->max_accel = max(TRACKPOINT_DEFAULT_MAX_ACCEL, 2.0 + speed_adjustment * 8) * 2;
 
 	/* Helloooo, magic numbers.
 
